@@ -1,0 +1,15 @@
+/* 
+    Document   : jsfcrud
+    Created on : 16-ene-2014, 13:33:27
+    Author     : stiven
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+    background-color:  #fe2e2e;
+}

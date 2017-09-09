@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <ui:composition template="/template.xhtml">
+    
+        <ui:define name="body">
+        <div>TODO write content</div>
+        <h:form>
+            <table border="0">
+                <tr>
+                    <td><h:outputLabel value="Nombres: " /></td>
+                    <td><h:outputText  value="#{terminalMB.gerente.nombres}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Apellidos: " /></td>
+                    <td><h:outputText  value="#{terminalMB.gerente.apellidos}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Tipo de Identificación: " /></td>
+                    <td><h:outputText  value="#{terminalMB.gerente.tipoidentificacion}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Número de Identificación: " /></td>
+                    <td><h:outputText  value="#{terminalMB.gerente.numeroidentificacion}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Nombre de la Empresa: " /></td>
+                    <td><h:outputText  value="#{terminalMB.gerente.nombreempresa}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Login: " /></td>
+                    <td><h:outputText  value="#{terminalMB.gerente.login}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Password: " /></td>
+                    <td><h:outputText  value="#{terminalMB.gerente.password}"/></td>
+                </tr>
+          
+            </table>
+            
+              <p:commandButton value="Eliminar Gerente" action="#{terminalMB.eliminarGerente()}"/><br/>
+            
+              <h:outputLabel value="#{terminalMB.mensaje}"/><br/>
+            <!-- <h:commandLink value="Ir al Menu" action="#{pruebaMB.irMenuAdmin()}" />-->
+         
+        </h:form>
+   </ui:define>
+    </ui:composition>
+</html>

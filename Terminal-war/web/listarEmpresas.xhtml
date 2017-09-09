@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+   <ui:composition template="/template.xhtml">
+    
+        <ui:define name="body">
+        <h:dataTable value="#{terminalMB.viajes}" var="viajs" border="3">
+
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Destino"/>  
+                    </f:facet>
+                    <h:outputText value="#{viajs.destino.nombre}"/>
+                </h:column>  
+                
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Precio"/>  
+                    </f:facet>
+                    <h:outputText value="#{viajs.codigo}"/>
+                </h:column> 
+                
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Fecha de Viaje"/>  
+                    </f:facet>
+                    
+                    <h:outputText value="#{viajs.fechaviaje}"/>
+                </h:column> 
+                
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Hora de Salida"/>  
+                    </f:facet>
+                    <h:outputText value="#{viajs.horasalida}"/>
+                </h:column> 
+                
+                <h:column>
+                    <!-- La cabezera de cada columna es facet -->
+                    <f:facet name="header"> 
+                        <h:outputText value="Cupos Disponibles"/>  
+                    </f:facet>
+                    <h:outputText value="#{viajs.cuposdisponibles}"/>
+                </h:column> 
+                
+                
+            
+                <!-- estas son las columnas para editar y eliminar gerentes-->
+                
+              <!-- <h:column>
+                    <f:facet name="header"> 
+                        <h:outputText value=""/>  
+                    </f:facet>
+                  <h:commandLink value="Editar"  action="#{terminalMB.mostrareditarGerente()}"/>
+                </h:column>
+                
+             <h:column>
+                    <f:facet name="header"> 
+                        <h:outputText value=""/>  
+                    </f:facet>
+                 <h:commandLink value="Eliminar" action="#{terminalMB.mostrareliminarGerente()}"/>
+                </h:column>-->
+            
+                <!-- estas son las columnas para editar y eliminar proveedores-->
+                
+                <!-- <h:column>
+                    <f:facet name="header"> 
+                        <h:outputText value=""/>  
+                    </f:facet>
+                    <h:commandLink value="Editar"  action="#{pruebaMB.mostrareditarCiudad()}"/>
+                </h:column>
+                
+             <h:column>
+                    <f:facet name="header"> 
+                        <h:outputText value=""/>  
+                    </f:facet>
+                 <h:commandLink value="Eliminar" action="#{pruebaMB.mostrareliminarCiudad()}"/>
+                </h:column>-->
+              </h:dataTable> 
+    </ui:define>
+    </ui:composition>
+</html>

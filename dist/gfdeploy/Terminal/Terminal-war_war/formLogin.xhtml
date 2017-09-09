@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/template.xhtml">
+    
+        <ui:define name="body">
+        <div><b>Por favor Ingrese los siguiente datos</b></div>
+        <h:form>
+            <table>
+                <tr>
+                    <td><h:outputLabel value="Login:"/></td>
+                    <td><h:inputText value="#{terminalMB.gerente.login}"/></td>
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Password:"/></td>
+                    <td><h:inputSecret value="#{terminalMB.gerente.password}"/></td>
+                </tr>
+            </table>
+            <p:commandButton value="Aceptar" action="#{terminalMB.verificarLogin()}"/><br/>
+            
+        </h:form>
+    </ui:define>
+    </ui:composition>
+</html>

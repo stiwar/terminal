@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <ui:composition template="/template.xhtml">
+    
+        <ui:define name="body">
+        
+        <h:form>
+            <table>
+                
+                <tr>
+                <td><h:outputText value="Nombre:"/></td>
+                <td><p:inputText value="#{terminalMB.gerente.nombres}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Apellidos:"/></td>
+                <td><p:inputText value="#{terminalMB.gerente.apellidos}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="tipo de Identificacion:"/></td>
+                <td>
+                    <p:selectOneMenu value="#{terminalMB.gerente.tipoidentificacion}">
+                        <f:selectItem itemValue="C.C" itemLabel="C.C"/>
+                        <f:selectItem itemValue="C.C Extranjera" itemLabel="C.C Extranjera"/>
+                        <f:selectItem itemValue="T.I" itemLabel="T.I"  />
+                    </p:selectOneMenu>
+                </td>
+                
+                
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Identificacion:"/></td>
+                <td><p:inputText value="#{terminalMB.gerente.numeroidentificacion}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Nombre de la Empresa:"/></td>
+                <td><p:inputText value="#{terminalMB.gerente.nombreempresa}"/></td>
+               </tr> 
+                <tr>
+                <td><h:outputText value="Login:"/></td>
+                <td><p:inputText value="#{terminalMB.gerente.login}"/></td>
+               </tr> 
+                  <tr>
+                <td><h:outputText value="Password:"/></td>
+                <td><p:inputText value="#{terminalMB.gerente.password}"/></td>
+               </tr> 
+            </table>
+           
+       <!-- estas son las columnas para editar y eliminar proveedores-->
+       <p:commandButton value="Editar Gerente" action="#{terminalMB.editarGerente()}"/><br/>
+            
+       <h:outputLabel value="#{terminalMB.mensaje}"/><br/>
+            <!-- <h:commandLink value="Ir al Menu" action="#{pruebaMB.irMenuAdmin()}" /> -->
+        </h:form>
+    </ui:define>
+    </ui:composition>
+</html>

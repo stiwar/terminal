@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+  <ui:composition template="/template.xhtml">
+    
+        <ui:define name="body">
+        
+        
+        <h:form>
+            <div></div>
+           <table>
+                  <tr>
+                <td><h:outputText value="Ciudad de Destino:"/></td>
+                <!--<td><h:selectOneMenu value="#{terminalMB.viaje.destino}">-->
+                
+                <td><p:selectOneMenu value="#{terminalMB.destinoprueba}">
+                        <f:selectItems value="#{terminalMB.selectOneMenu}" var="ciudad" itemValue="#{ciudad.idciudad}"  itemLabel="#{ciudad.nombre}"/>
+                    </p:selectOneMenu></td>
+                 </tr> 
+                <tr>
+                <td><h:outputText value="Valor Tiquete:"/></td>               
+                <td><p:inputText value="#{terminalMB.viaje.codigo}"/></td>
+                </tr> 
+                <tr>
+                      
+                      
+              <td><h:outputText value="Fecha de Viaje:"/></td>
+                 
+            <td>
+               <!-- <h:inputText value="#{terminalMB.viaje.fechaviaje}"/>-->
+                
+                   <!-- <p:calendar value="#{terminalMB.date1}" pattern="MM/dd/yyyy" />-->
+                <!--<p:calendar value="#{terminalMB.date1}"/>
+                     <p:dialog header="Selected Dates" widgetVar="dialog"  
+                showEffect="fold" hideEffect="fold">  
+  
+        <h:panelGrid id="display" columns="2" cellpadding="5">  
+  
+            <h:outputText value="DateTime: " />  
+            <h:outputText value="#{terminalMB.viaje.fechaviaje}">  
+                <f:convertDateTime pattern="MM/dd/yyyy " />  
+            </h:outputText>  
+                        </h:panelGrid>  
+                    </p:dialog> --> 
+                            
+                                        <!-- esto  -->
+                
+               <p:calendar value="#{terminalMB.date1}" mode="inline" id="inlineCal"/>    
+        
+                <p:dialog header="Selected Dates" widgetVar="dialog"   
+                    showEffect="fade" hideEffect="fade">  
+      
+             <h:panelGrid id="display" columns="2" cellpadding="5">  
+          
+                <h:outputText value="Inline Date:" />  
+                <h:outputText value="#{terminalMB.viaje.fechaviaje}" id="inlineDate">  
+                <f:convertDateTime pattern="d/M/yyyy"/>  
+             </h:outputText>  
+        </h:panelGrid>  
+         
+    </p:dialog> 
+            </td>
+                            <!-- esto  -->
+                </tr>
+                
+               
+               
+                <tr>
+                    <td><h:outputText value="Hora de salida:"/></td>
+                    <td>
+                        <h3></h3>  
+                        <p:calendar value="#{terminalMB.date2}" pattern="HH:mm" timeOnly="true" />
+                    </td>
+                </tr>
+                
+                <tr>
+                <td><h:outputText value="Cupos Disponibles:"/></td>
+                <td><p:inputText value="#{terminalMB.viaje.cuposdisponibles}"/></td>
+                 </tr>
+                <tr>
+                <td><h:outputText value="Id Gerente:"/></td>
+                <td><h:outputText value="#{terminalMB.idusuario}"/></td>
+                 </tr> 
+
+              </table>
+            <p:commandButton value="Ingresar Viaje" action="#{terminalMB.crearViaje()}"/><br/> 
+            <!--<h:commandLink value="Ir al Menu" action="#{pruebaMB.irMenuAdmin()}" />-->
+        </h:form>
+   </ui:define>
+    </ui:composition>
+</html> 
